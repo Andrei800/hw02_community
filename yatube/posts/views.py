@@ -17,8 +17,8 @@ def group_list(request):
     title = 'Список групп'
     text = 'Информация о группах проекта Yatube'
     context = {
-        "title":title,
-        "text":text,
+        "title": title,
+        "text": text,
     }
     return render(request, template, context)
 

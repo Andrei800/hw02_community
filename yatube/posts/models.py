@@ -30,4 +30,3 @@ class Post(models.Model):
         related_name='group',
         verbose_name='Группа'
     )
-    
