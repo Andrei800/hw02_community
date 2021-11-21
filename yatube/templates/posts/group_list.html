@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block content %}
+  <a class="navbar-brand" href="{% url 'posts:index' %}">
+  Вернуться на главную страницу
+  </a>
+    {% for post in posts %}
+  <ul>
+    <li>
+      Группа любителей Льва Толстова: {{ group_post.groupr.get_full_name }}
+    </li>
+    <li>
+      Автор: {{ post.author.get_full_name }}
+    </li>
+    <li>
+      Дата публикации: {{ post.pub_date|date:"d E Y" }}
+    </li>
+  </ul>
+    <p>
+      {{ post.text }}
+    </p>    
+  {% if not forloop.last %}<hr>{% endif %}
+{% endfor %} 
+{% endblock %}
